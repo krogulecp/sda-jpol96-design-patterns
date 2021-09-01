@@ -1,5 +1,9 @@
 ## sample 1
 
+### nie wywołujemy konstruktora klasy bazowej Object
+### nie stosujemy pól, które później nie są wykorzystywane
+### dyskusyjne wykorzystanie this.address
+
 ```
 public class Message {
 
@@ -18,6 +22,9 @@ public class Message {
 ```
 
 ## sample 2
+
+### za dużo rozgałęzień - utrudniony rozwój i wprowadzanie nowych funkcji
+### utrudnione testy
 
 ``` 
 // ...
@@ -54,9 +61,13 @@ public class Message {
 
 ## sample 3
 
+### nie połykamy wyjątków
+
 ```catch( Exception e ) {}```
 
 ## sample 4
+
+### niepotrzebna logika
 
 ```
 public static boolean isNull(int value) {
@@ -72,10 +83,13 @@ public static boolean isNull(int value) {
 
 ## sample 5
 
+### metoda logicznie poprawna, ale nie daje nam zysku w postaci mniejszej ilości kodu lub większej czytelności
+
 ```
 /**
-*
-*
+* ...
+* ...
+* ...
 */
 boolean isNotNull( Object o ) {
   return o != null;
@@ -83,25 +97,6 @@ boolean isNotNull( Object o ) {
 ```
 
 ## sample 6
-
-```
-class Provider {
-
-    private List<Cell> gameBoard;
-
-    public List<Cell> getFlaggedCells(){
-        List<Cell> flaggedCells = new ArrayList<>();
-        for(Cell cell : gameBoard){
-            if(cell.isFlagged()){
-                flaggedCells.add(cell);
-            }
-        }
-        return flaggedCells;
-    }
-}
-```
-
-## sample 7
 
 ```
 /**
